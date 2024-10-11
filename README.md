@@ -5,6 +5,7 @@ This project provisions an AWS EC2 instance as a cloud desktop using Terraform.
 * The instance is created in a public subnet with a public IP address.
 * The instance is accessible via SSH. 
 * The following packages are installed on the instance:
+  * Rust
   * Zsh
   * Oh My Zsh
   * Git
@@ -61,6 +62,8 @@ make terraform-apply
 ```
 
 ### SSH into the Cloud Desktop
+
+Agent forwarding works! So you can access GitHub, etc. right away.
 
 ```bash
 make ssh
