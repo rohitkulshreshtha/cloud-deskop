@@ -159,9 +159,9 @@ resource "null_resource" "setup_cloud_desktop" {
       "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
 
       # Install Terraform
-      "sudo dnf install -y dnf-plugins-core",
-      "sudo dnf config-manager --add-repo https://rpm.releases.hashicorp.com/fedora/hashicorp.repo",
-      "sudo dnf -y install terraform",
+      "sudo yum install -y yum-utils shadow-utils",
+      "sudo yum-config-manager --add-repo https://rpm.releases.hashicorp.com/AmazonLinux/hashicorp.repo",
+      "sudo yum -y install terraform",
 
       # Install jq
       "sudo dnf install -y jq",    # Amazon Linux (adjust for other AMIs if needed)
