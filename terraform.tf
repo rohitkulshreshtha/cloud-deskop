@@ -165,6 +165,14 @@ resource "null_resource" "setup_cloud_desktop" {
 
       # Install jq
       "sudo dnf install -y jq",    # Amazon Linux (adjust for other AMIs if needed)
+
+      # Install K9s
+      "curl -Lo k9s_Linux_amd64.tar.gz https://github.com/derailed/k9s/releases/download/v0.32.5/k9s_Linux_amd64.tar.gz",
+      "mkdir -p /tmp/k9s_install",
+      "tar -xzf k9s_Linux_amd64.tar.gz -C /tmp/k9s_install",
+      "sudo mv /tmp/k9s_install/k9s /usr/local/bin/",
+      "rm -f k9s_Linux_amd64.tar.gz",
+      "rm -rf /tmp/k9s_install",
     ]
 
     connection {
