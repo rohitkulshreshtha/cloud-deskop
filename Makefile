@@ -79,4 +79,4 @@ view-resources:
 
 .PHONY: cloud-ip
 cloud-ip:
-	terraform output -raw public_ip
+	@terraform output -raw public_ip
